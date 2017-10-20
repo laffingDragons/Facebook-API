@@ -26,7 +26,8 @@
 					$("#myBirthday").html(response.birthday);
 					$("#myGender").html(response.gender);
                     $("#myAbout").html(response.about);
-                    $("#myWebsite").val(response.website);
+                    $("#myWebsite").html(response.website);
+                    $("#myRelation").html(response.relationship_status);
                     
                     //for language 
                     var languages = response.languages ;
@@ -35,35 +36,20 @@
 				    });
   	                $("#myLanguage").text(myLanguage);
                     
-                    // for Education
-                     var workData = response.work ;       
-					var workSections ="" ;
-					 var getWork = $.map(workData,function(index){    
-					 
-					 		for(var names in index) {                        // For getting Work details    
-					 
-					 if (names =="position") {
-					
-						workSections += (index.position.name+" - "+index.employer.name+ " | ");
-					}
-					}
-					$("#myWork").attr("value",""+workSections+""); 
-					
-					});  
-
-					 var eduData = response.education ;
-					 var getCollege;
-					 $.each(eduData,function(i,value){
-					 	 if(value.type == "College"){
-                            getCollege = value.school.name;							//  For getting School details    
-                            $("#myCollege").attr("value"," "+getCollege+"");
-                        } 
-                        else if (value.type == "High School"){
-                        	 getCollege = value.school.name;
-                        	 $("#myHighschool").attr("value"," "+getCollege+"");
-                        	}
-					 	}
-					 );
+                    // for work
+                    var work = response.work ;
+                    var myWork = $.map(work,function(index){
+                        return index.employer.name;
+                    });
+                    $("#myWork").text(myWork);
+                    
+                    //for education
+                    var education = response.education ;
+                    var myEducation = $.map(education,function(index){
+                        return index.school.name;
+                    });
+                    $("#myEducation").text(myEducation);
+                     
                     
                     
                 }
