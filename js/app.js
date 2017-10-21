@@ -50,7 +50,12 @@
                     });
                     $("#myEducation").text(myEducation);
                      
-                    
+                    // for family
+                    var family = response.family.data ;
+                    var myFamily = $.map(family,function(index){
+                        return index.name;
+                    });
+                    $("#myFamily").text(myFamily);
                     
                 }
             //end argument list 
