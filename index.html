@@ -1,204 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Easy Profile Blue - templatemo</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="keywords" content="">
-	<meta name="description" content="">
 
-	<!-- stylesheet css -->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/templatemo-blue.css">
-    
-    
-</head>
-<body data-spy="scroll" data-target=".navbar-collapse">
+  <head>
+    <meta charset="utf-8">
+    <title>Facebook</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
 
-<!-- preloader section -->
-<div class="preloader">
-	<div class="sk-spinner sk-spinner-wordpress">
-       <span class="sk-inner-circle"></span>
-     </div>
-</div>
+    <!-- stylesheet css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/templatemo-blue.css">
 
-<!-- header section -->
+
+  </head>
+
+  <body data-spy="scroll" data-target=".navbar-collapse">
+
+    <!-- preloader section -->
+    <div class="preloader">
+      <div class="sk-spinner sk-spinner-wordpress">
+        <span class="sk-inner-circle"></span>
+      </div>
+    </div>
+
+    <!-- header section -->
     <div class="container">
-   <div class="form-group">
-   <div class="input-group" style="padding: 50px 10px 0 20px">
-    <span class="input-group-addon">$</span>
-    <input type="text" class="form-control" id="token" placeholder="Copy your Facebook API Token here...">
-    <span class="input-group-btn">
+      <div class="form-group">
+        <div class="input-group" style="padding: 50px 10px 0 20px">
+          <span class="input-group-addon">$</span>
+          <input type="text" class="form-control" id="token" placeholder="Copy your Facebook API Token here...">
+          <span class="input-group-btn">
       <button id="info" class="btn btn-default" type="button" >Enter</button><!--This is function I'm trying to execute--->
     </span>
-  </div>
-</div>
+        </div>
+      </div>
     </div>
-    
-    
-    
-<header>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-sm-12">
-                <div id="mainPic">
-				<img title="Click here for Posts" class="img-responsive img-circle tm-border myProfilePic" alt="profile pic goes here">
-				<hr>
-                </div>
-				<h1 class="tm-title bold shadow">Welcome</h1>
-                <h1 class="white bold shadow"><p><span title="Click here for Basic-info" id="myName"></span></p></h1><!--name--->
-             </div>
-		</div>
-	</div>
-</header>
 
-<!-- basic info and work section -->
-<section class="container">
-	<div class="row">
-		<div class="col-md-6 col-sm-12">
-			<div class="basic">
-                <h4>Basic-info</h4><br />
-                <p>Firstname : <span id="myFirstName"></span></p>
-                <p>Lastname : <span id="myLastName"></span></p>
-                <p>Birthday : <span id="myBirthday"></span></p>
-                <p>Gender : <span id="myGender"></span></p>
-                <p>Languages : <span id="myLanguage"></span></p>
-				</div>
+
+
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+            <div id="mainPic">
+              <img title="Click here for Posts" class="img-responsive img-circle tm-border myProfilePic" alt="profile pic goes here">
+              <hr>
             </div>
-        
-		<div class="col-md-6 col-sm-12">
-			<div class="work">
-              <h4>Work and Education</h4><br />
-                <p>Work : <span id="myWork"></span></p>
-                <p>Education : <span id="myEducation"></span></p>
-               </div> 
-		</div>
-	</div>
-</section>
-
-<!-- Family and about -->
-<section class="container">
-	<div class="row">
-		<div class="col-md-8 col-sm-12">
-			<div class="family">
-			  <h4>Relationship</h4><br />
-                <p>Relationship Status : <span id="myRelation"></span></p>
-                <p>Family members : <span id="myFamily"></span></p>
-			</div>
+            <h1 class="tm-title bold shadow">Welcome</h1>
+            <h1 class="white bold shadow"><p><span title="Click here for Basic-info" id="myName"></span></p></h1>
+            <!--name--->
+          </div>
         </div>
-		<div class="col-md-4 col-sm-12">
-			<div class="about">
-				<h4>About Me</h4><br />
-                <p> <span id="myAbout"></span></p>
-           </div>
-        </div>
-	</div>
-</section>
+      </div>
+    </header>
 
-<!-- contact and experience -->
-<section class="container">
-	<div class="row">
-		<div class="col-md-4 col-sm-12">
-			<div class="contact">
-                <h4>Contacts</h4><br />
-                <p>Email : <span id="myEmail" style="color: #3366CC"></span></p>
-                <p>Websites : <span id="myWebsite" style="color: #3366CC"></span></p>
-         </div>
-        </div>
-		<div class="col-md-8 col-sm-12">
-			<div class="experience">
-                <h4>Cover</h4><br />
-                <img class="myCoverPic img-responsive" alt="Cover pic looks cool, go and set one!">
-				</div>
-            </div>
-	</div>
-</section>
-
- <!---Post ------->
+    <!-- basic info and work section -->
     <section class="container">
-	<div class="row">
-		<div class="col-md-6 col-sm-12">
-			<div class="feed1">
-                <a id="story1"></a>
-            <a class="fPhoto1"></a>
-         </div>
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div class="basic">
+            <h4>Basic-info</h4>
+            <br />
+            <p>Firstname : <span id="myFirstName"></span></p>
+            <p>Lastname : <span id="myLastName"></span></p>
+            <p>Birthday : <span id="myBirthday"></span></p>
+            <p>Gender : <span id="myGender"></span></p>
+            <p>Languages : <span id="myLanguage"></span></p>
+          </div>
         </div>
-		<div class="col-md-6 col-sm-12">
-			<div class="feed2">
-            <a id="story2"></a>
-            <a class="fPhoto2"></a>    
-            </div>
-            </div>
-	</div>
-</section>
-    
+
+        <div class="col-md-6 col-sm-12">
+          <div class="work">
+            <h4>Work and Education</h4>
+            <br />
+            <p>Work : <span id="myWork"></span></p>
+            <p>Education : <span id="myEducation"></span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Family and about -->
     <section class="container">
-	<div class="row">
-		<div class="col-md-6 col-sm-12">
-			<div class="feed3">
-                <a id="story3"></a>
-            <a class="fPhoto3"></a>
-         </div>
+      <div class="row">
+        <div class="col-md-8 col-sm-12">
+          <div class="family">
+            <h4>Relationship</h4>
+            <br />
+            <p>Relationship Status : <span id="myRelation"></span></p>
+            <p>Family members : <span id="myFamily"></span></p>
+          </div>
         </div>
-		<div class="col-md-6 col-sm-12">
-			<div class="feed4">
-            <a id="story4"></a>
-            <a class="fPhoto4"></a>    
-            </div>
-            </div>
-	</div>
-</section>
-    
+        <div class="col-md-4 col-sm-12">
+          <div class="about">
+            <h4>About Me</h4>
+            <br />
+            <p> <span id="myAbout"></span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact and experience -->
     <section class="container">
-	<div class="row">
-		<div class="col-md-6 col-sm-12">
-			<div class="feed5">
-                <a id="story5"></a>
-            <a class="fPhoto5"></a>
-         </div>
+      <div class="row">
+        <div class="col-md-4 col-sm-12">
+          <div class="contact">
+            <h4>Contacts</h4>
+            <br />
+            <p>Email : <span id="myEmail" style="color: #3366CC"></span></p>
+            <p>Websites : <span id="myWebsite" style="color: #3366CC"></span></p>
+          </div>
         </div>
-		<div class="col-md-6 col-sm-12">
-			<div class="feed6">
-            <a id="story6"></a>
-            <a class="fPhoto6"></a>    
-            </div>
-            </div>
-	</div>
-</section>
+        <div class="col-md-8 col-sm-12">
+          <div class="experience">
+            <h4>Cover</h4>
+            <br />
+            <img class="myCoverPic img-responsive" alt="Cover pic looks cool, go and set one!">
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- footer section -->
-    <!--Dont care about this footer
-<footer>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-sm-12">
-				<p>Copyright &copy; 2084 Your Easy Profile</p>
-				<ul class="social-icons">
-					<li><a href="#" class="fa fa-facebook"></a></li>
-                    <li><a href="#" class="fa fa-google-plus"></a></li>
-					<li><a href="#" class="fa fa-twitter"></a></li>
-					<li><a href="#" class="fa fa-dribbble"></a></li>
-					<li><a href="#" class="fa fa-github"></a></li>
-					<li><a href="#" class="fa fa-behance"></a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</footer>
+    <!---Post ------->
+    <section class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div class="feed1">
+            <a id="post1"></a>
+            <a class="photoPost1"></a>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="feed2">
+            <a id="post2"></a>
+            <a class="photoPost2"></a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-------->
+    <section class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div class="feed3">
+            <a id="post3"></a>
+            <a class="photoPost3"></a>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="feed4">
+            <a id="post4"></a>
+            <a class="photoPost4"></a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- javascript js -->	
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>	
-<script src="js/jquery.backstretch.min.js"></script>
-<script src="js/custom.js"></script>
-<script src="js/app.js"></script>
-    
+    <section class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div class="feed5">
+            <a id="post5"></a>
+            <a class="photoPost5"></a>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="feed6">
+            <a id="post6"></a>
+            <a class="photoPost6"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer section -->
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+            <ul class="social-icons">
+              <li>
+                <a id="basic" class="fa fa-home"></a>
+              </li>
+              <li>
+                <a id="post" class="fa fa-facebook"></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
 
 
 
-</body>
+    <!-- javascript js -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.backstretch.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/app.js"></script>
+
+
+
+
+  </body>
+
 </html>
