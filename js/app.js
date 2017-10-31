@@ -66,7 +66,7 @@
 
                     },
                 //Loader
-            timeout:3000,
+            timeout:1000,
                 beforeSend : function(){
                     $('.preloader').show();
                 },
@@ -85,16 +85,145 @@
            
            
         //Ajax for gettting Feed
-        $.ajax("https://graph.facebook.com/me?fields=posts{created_time,type,full_picture,story,message,source},name,picture.width(150).height(150)&access_token="+facebookToken,{
-		success:function(response){
-			var postsData = response.posts.data;
-			var postsDataValues = $.map(postsData,function(value,index){
-				if (index <= 5) {
-				return value;
-			}
-			});
+        $.ajax("https://graph.facebook.com/me?fields=posts{created_time,type,full_picture,story,message,source},name,picture&access_token="+myFacebookToken,{
+		success: function(response) {
+            var feedData = response.posts.data;
+            var feeds = $.map(feedData, function(value, index) {
+                if (index <= 5) { //for limiting 6 feeds
+                    return value;
+                }
+            });
+            //first feed starts here
+            var feed1 = $.map(feeds, function(value, index) {
+                if (index == 0) {
+                    return value;
+                }
+            });
+            if (feed1[0].type == "status") { //for status update
+
+                $("#story1").html(response.name + " Shared a Status : </br>" + "<strong><h1>" + feed1[0].message + "</strong></h1>");
+
+            } else if (feed1[0].type == "photo") { //for photo shared
+
+                $("#story1").text("" + feed1[0].story + "");
+                $(".fPhoto1").html("<img src=" + feed1[0].full_picture + " " + "class=" + " img-responsive" + ">");
+
+            } else if (feed1[0].type == "video") { //for video shared
+                $("#story1").text("" + feed1[0].story + "");
+                $(".fPhoto1").html("<video controls> <source  src=" + "" + feed1[0].source + " " + "type= " + "video/mp4" + "></video>");
+            } else {}
+            //first feed ends here
+
+            //second feed starts here
+            var feed2 = $.map(feeds, function(value, index) {
+                if (index == 1) {
+                    return value;
+                }
+            });
+            if (feed2[0].type == "status") { //for status update
+
+                $("#story2").html(response.name + " Shared a Status : </br>" + "<strong><h1>" + feed2[0].message + "</strong></h1>");
+
+            } else if (feed2[0].type == "photo") { //for photo shared
+
+                $("#story2").text("" + feed2[0].story + "");
+                $(".fPhoto2").html("<img src=" + feed2[0].full_picture + " " + "class=" + " img-responsive" + ">");
+
+            } else if (feed2[0].type == "video") { //for video shared
+                $("#story2").text("" + feed2[0].story + "");
+                $(".fPhoto2").html("<video controls> <source  src=" + "" + feed2[0].source + " " + "type= " + "video/mp4" + "></video>");
+            } else {}
+            //second feed ends here
+
+            //third feed starts here
+             var feed3 = $.map(feeds, function(value, index) {
+                if (index == 2) {
+                    return value;
+                }
+            });
+            if (feed3[0].type == "status") { //for status update
+
+                $("#story3").html(response.name + " Shared a Status : </br>" + "<strong><h1>" + feed3[0].message + "</strong></h1>");
+
+            } else if (feed3[0].type == "photo") { //for photo shared
+
+                $("#story3").text("" + feed3[0].story + "");
+                $(".fPhoto3").html("<img src=" + feed3[0].full_picture + " " + "class=" + " img-responsive" + ">");
+
+            } else if (feed3[0].type == "video") { //for video shared
+                $("#story3").text("" + feed3[0].story + "");
+                $(".fPhoto3").html("<video controls> <source  src=" + "" + feed3[0].source + " " + "type= " + "video/mp4" + "></video>");
+            } else {}
+            //third feed ends here
+
+            //fourth feed starts here
+            var feed4 = $.map(feeds, function(value, index) {
+                if (index == 3) {
+                    return value;
+                }
+            });
+            if (feed4[0].type == "status") { //for status
+
+                $("#story4").html(response.name + " Shared a Status : </br>" + "<strong><h1>" + feed4[0].message + "</strong></h1>");
+
+            } else if (feed4[0].type == "photo") { //for photo
+
+                $("#story4").text("" + feed4[0].story + "");
+                $(".fPhoto4").html("<img src=" + feed4[0].full_picture + " " + "class=" + " img-responsive" + ">");
+
+            } else if (feed4[0].type == "video") { //for video
+                $("#story4").text("" + feed4[0].story + "");
+                $(".fPhoto4").html("<video controls> <source  src=" + "" + feed4[0].source + " " + "type= " + "video/mp4" + "></video>");
+            } else {}
+            //fourth feed ends here
+
+            //fifth feed starts here
+            var feed5 = $.map(feeds, function(value, index) {
+                if (index == 4) {
+                    return value;
+                }
+            });
+            if (feed5[0].type == "status") { //for status
+
+                $("#story5").html(response.name + " Shared a Status : </br>" + "<strong><h1>" + feed5[0].message + "</strong></h1>");
+
+            } else if (feed5[0].type == "photo") { //for photo
+
+                $("#story5").text("" + feed5[0].story + "");
+                $(".fPhoto5").html("<img src=" + feed5[0].full_picture + " " + "class=" + " img-responsive" + ">");
+
+            } else if (feed5[0].type == "video") { //for video
+                $("#story5").text("" + feed5[0].story + "");
+                $(".fPhoto5").html("<video controls> <source  src=" + "" + feed5[0].source + " " + "type= " + "video/mp4" + "></video>");
+            } else {}
+            //fifth feed ends here
+
+            //sixth feed starts here
+            var feed6 = $.map(feeds, function(value, index) {
+                if (index == 5) {
+                    return value;
+                }
+            });
+            if (feed6[0].type == "status") { //for status
+
+                $("#story6").html(response.name + " Shared a Status : </br>" + "<strong><h1>" + feed6[0].message + "</strong></h1>");
+
+            } else if (feed6[0].type == "photo") { //for photo
+
+                $("#story6").text("" + feed6[0].story + "");
+                $(".fPhoto6").html("<img src=" + feed6[0].full_picture + " " + "class=" + " img-responsive" + ">");
+
+            } else if (feed6[0].type == "video") { //for video
+                $("#story6").text("" + feed6[0].story + "");
+                $(".fPhoto6").html("<video controls> <source  src=" + "" + feed6[0].source + " " + "type= " + "video/mp4" + "></video>");
+            } else {}
+
+
+
+
+        } //end success function
             
-        },
+        
             
            
            
@@ -107,7 +236,7 @@
         $(".form-group").show();
         $("#mainPic").hide();
         $(".basic").hide();
-        $(".feed0").hide();
+        $(".feed6").hide();
         $(".work").hide();
         $(".feed1").hide();
         $(".family").hide();
@@ -119,27 +248,68 @@
         $(".experience").hide();
         $(".feed5").hide();
       
-       //for basic info
       
-    $("#ITCard").on('mouseclick',function(){
-        $(".form-group").show();
-        $("#mainPic").hide();
-        $(".basic").hide();
-        $(".feed0").hide();
-        $(".work").hide();
-        $(".feed1").hide();
-        $(".family").hide();
-        $(".feed2").hide();
-        $(".about").hide();
-        $(".feed3").hide();
-        $(".contact").hide();
-        $(".feed4").hide();
-        $(".experience").hide();
-        $(".feed5").hide();
+      
+  });// end doc ready
+
+       //for  Feed
+        $(".input-group-btn").on('click',function(){
+        $(".form-group").hide("puff");
+        $("#mainPic").show();
+        $(".basic").hide("puff");
+        $(".feed6").show();
+        $(".work").hide("puff");
+        $(".feed1").show();
+        $(".family").hide("puff");
+        $(".feed2").show();
+        $(".about").hide("puff");
+        $(".feed3").show();
+        $(".contact").hide("puff");
+        $(".feed4").show();
+        $(".experience").hide("puff");
+        $(".feed5").show();
         
-    });  
+    });
       
-  });
+      //for feed again
+      
+      
+        $("#mainPic").on('click',function(){
+        $(".form-group").hide("puff");
+        $("#mainPic").show();
+        $(".basic").hide("puff");
+        $(".feed6").show();
+        $(".work").hide("puff");
+        $(".feed1").show();
+        $(".family").hide("puff");
+        $(".feed2").show();
+        $(".about").hide("puff");
+        $(".feed3").show();
+        $(".contact").hide("puff");
+        $(".feed4").show();
+        $(".experience").hide("puff");
+        $(".feed5").show();
+        
+    });
+      // for basic info
+      
+        $("#myName").on('click',function(){
+        $(".form-group").hide("puff");
+        $("#mainPic").show();
+        $(".basic").show();
+        $(".feed6").hide("puff");
+        $(".work").show();
+        $(".feed1").hide("puff");
+        $(".family").show();
+        $(".feed2").hide("puff");
+        $(".about").show();
+        $(".feed3").hide("puff");
+        $(".contact").show();
+        $(".feed4").hide("puff");
+        $(".experience").show();
+        $(".feed5").hide("puff");
+        
+    });
            
   
      /*.ajax("https://graph.facebook.com/me?fields=posts{created_time,type,full_picture,story,message,source},name,picture.width(150).height(150)&access_token="+facebookToken,{

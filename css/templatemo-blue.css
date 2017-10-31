@@ -58,7 +58,7 @@ h2 {
 
 .basic,.work,
 .family,.about,
-.contact, .experience {
+.contact, .experience, .feed1,  .feed2, .feed3, .feed4, .feed5, .feed6 {
   padding: 40px;
   min-height: 330px;
 }
